@@ -171,14 +171,7 @@
                     android:hint="숫자만 입력"
                     android:textSize="14sp"
                     android:inputType="phone"/>
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/checkbuttonbackground"
-                    android:text="인증"
-                    android:textColor="#333333"
-                    android:textStyle="bold"/>
+                
             </LinearLayout>
 
             <!--아이디 입력-->
@@ -259,28 +252,28 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/loginbackground"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingEnd="10dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <EditText
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:background="@null"
+                    android:background="@drawable/loginbackground"
                     android:paddingHorizontal="15dp"
                     android:hint="주소 검색"
                     android:textSize="14sp"
                     android:inputType="textPostalAddress"/>
 
-                <ImageView
-                    android:id="@+id/btn_address_search"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/menubarsearchicon"
-                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/checkbuttonbackground"
+                    android:text="검색"
+                    android:textColor="#333333"
+                    android:textStyle="bold"/>
+
             </LinearLayout>
 
             <!--상세 주소 입력-->
@@ -298,32 +291,6 @@
                 android:maxLines="2"/>
 
 
-            <!--급수 선택-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="급수 선택"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="5dp"/>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/loginbackground">
-                <Spinner
-                    android:id="@+id/spinner_level"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:entries="@array/badminton_levels"/>
-            </FrameLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="* 급수는 추후에 인증이 필요할 수 있습니다!"
-                android:textColor="#CCCCCC"
-                android:textSize="12sp"/>
 
             <!--회원가입 완료 버튼-->
             <com.google.android.material.card.MaterialCardView
