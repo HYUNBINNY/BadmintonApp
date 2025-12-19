@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/backgroundfilter" />
 
-
     <!--상단 바-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
@@ -56,6 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!--상단 선-->
         <View
             android:layout_width="350dp"
             android:layout_height="2dp"
@@ -84,8 +84,13 @@
             android:paddingBottom="50dp">
 
             <!--이름 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="이름" android:textColor="#FFFFFF" android:layout_marginTop="20dp" android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -95,9 +100,14 @@
                 android:textSize="14sp"
                 android:inputType="textPersonName"/>
 
-            <!--생년원일 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="생년월일" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+            <!--생년월일 입력-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="생년월일"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -107,9 +117,47 @@
                 android:textSize="14sp"
                 android:inputType="number"/>
 
+            <!--성별 선택-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="성별"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="남성"
+                    android:textColor="#000000"
+                    android:buttonTint="#000000"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="20dp"
+                    android:checked="true"/>
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여성"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:buttonTint="#000000"/>
+            </RadioGroup>
+
             <!--전화번호 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="전화번호" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전화번호"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -134,8 +182,13 @@
             </LinearLayout>
 
             <!--아이디 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="아이디" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -161,8 +214,13 @@
             </LinearLayout>
 
             <!--비밀번호 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="비밀번호" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -172,9 +230,14 @@
                 android:textSize="14sp"
                 android:inputType="textPassword"/>
 
-            <!--비밀번호 확인-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="비밀번호 확인" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+            <!--비밀번호 재확인-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 확인"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -184,50 +247,65 @@
                 android:textSize="14sp"
                 android:inputType="textPassword"/>
 
-            <!--이메일 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="이메일" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+
+            <!--주소 입력-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="주소"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@drawable/loginbackground"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:paddingEnd="10dp">
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/loginbackground"
-                    android:paddingHorizontal="10dp"
-                    android:hint="이메일"
+                    android:background="@null"
+                    android:paddingHorizontal="15dp"
+                    android:hint="주소 검색"
                     android:textSize="14sp"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textPostalAddress"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:layout_marginHorizontal="8dp"/>
-
-                <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1.2"
-                    android:background="@drawable/loginbackground">
-                    <Spinner
-                        android:id="@+id/spinner_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:entries="@array/email_domains"/>
-                </FrameLayout>
+                <ImageView
+                    android:id="@+id/btn_address_search"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/menubarsearchicon"
+                    />
             </LinearLayout>
 
+            <!--상세 주소 입력-->
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/loginbackground"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
+                android:hint="상세 주소를 입력하세요"
+                android:textSize="14sp"
+                android:inputType="textMultiLine"
+                android:maxLines="2"/>
 
-            <!--급수 입력-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="배드민턴 급수" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+
+            <!--급수 선택-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="급수 선택"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"/>
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -239,49 +317,13 @@
                     android:entries="@array/badminton_levels"/>
             </FrameLayout>
 
-
-            <!--서류 파일 전송-->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="증빙서류 제출 (급수 인증용)" android:textColor="#FFFFFF" android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_filename"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/loginbackground"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="15dp"
-                    android:text="파일을 선택해주세요"
-                    android:textColor="#888888"
-                    android:textSize="12sp"/>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_upload"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/checkbuttonbackground"
-                    android:text="찾기"
-                    android:textColor="#333333"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-
-            <!--비밀번호 찾기 버튼-->
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp"
-                android:text="|   비밀번호 찾기"
-                android:textColor="#DDDDDD"
-                android:textSize="12sp"
-                android:layout_marginEnd="5dp"/>
+                android:layout_marginTop="5dp"
+                android:text="* 급수는 추후에 인증이 필요할 수 있습니다!"
+                android:textColor="#CCCCCC"
+                android:textSize="12sp"/>
 
             <!--회원가입 완료 버튼-->
             <com.google.android.material.card.MaterialCardView
