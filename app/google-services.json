@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "608497383812",
+    "project_id": "badmintonapp-77022",
+    "storage_bucket": "badmintonapp-77022.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608497383812:android:a946e46696f4c15ee585d1",
+        "android_client_info": {
+          "package_name": "com.app.badmintonapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnUAUSyuGNO5XKPGBmvuvZZDdMOMymoXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,132 +3,141 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"> <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none"
-    android:paddingBottom="100dp"
-    android:clipToPadding="false"> <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:fitsSystemWindows="true">
 
-    <!--상단 제목-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="배드민턴 경기 규칙"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!--첫번째 규칙-->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:cardBackgroundColor="#FFFFFF">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:scrollbars="none">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. 점수 방식"
-                android:textColor="#8ED73D"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- 3게임 중 2게임을 먼저 이기면 승리합니다.\n- 한 게임당 21점 또는 25점을 먼저 득점하면 승리합니다.\n- 20:20 동점(듀스)일 경우, 2점을 연속으로 먼저 득점한 쪽이 승리합니다. (최대 30점까지)"
-                android:textColor="#555555"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="배드민턴 경기 규칙"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <!--두번쨰 규칙-->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:cardBackgroundColor="#FFFFFF">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="1. 2점수 방식"
+                            android:textColor="#8ED73D"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            android:text="- 3게임 중 2게임을 먼저 이기면 승리합니다.\n- 한 게임당 21점 또는 25점을 먼저 득점하면 승리합니다.\n- 20:20 동점(듀스)일 경우, 2점을 연속으로 먼저 득점한 쪽이 승리합니다. (최대 30점까지)"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="2. 서비스 규칙"
+                            android:textColor="#8ED73D"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            android:text="- 서버의 점수가 짝수이면 오른쪽, 홀수이면 왼쪽에서 대각선 방향으로 서비스합니다.\n- 셔틀콕은 허리 아래에서 쳐야 합니다.\n- 라켓 헤드가 손목보다 낮아야 합니다."
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2. 서비스 규칙"
-                android:textColor="#8ED73D"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="3. 반칙 규정(Fault)"
+                            android:textColor="#FF6B6B"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            android:text="- 셔틀콕이 네트에 걸리거나 코트 밖으로 나간 경우\n- 라켓이나 몸이 네트를 건드린 경우 (네트 터치)\n- 셔틀콕을 두 번 연속으로 친 경우 (더블 터치)"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- 서버의 점수가 짝수이면 오른쪽, 홀수이면 왼쪽에서 대각선 방향으로 서비스합니다.\n- 셔틀콕은 허리 아래에서 쳐야 합니다.\n- 라켓 헤드가 손목보다 낮아야 합니다."
-                android:textColor="#555555"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
 
-    <!--세번쨰 규칙-->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:cardBackgroundColor="#FFFFFF">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3. 반칙 규정(Fault)"
-                android:textColor="#FF6B6B"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="- 셔틀콕이 네트에 걸리거나 코트 밖으로 나간 경우\n- 라켓이나 몸이 네트를 건드린 경우 (네트 터치)\n- 셔틀콕을 두 번 연속으로 친 경우 (더블 터치)"
-                android:textColor="#555555"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <View android:layout_width="match_parent" android:layout_height="50dp"/>
-
-</LinearLayout>
-</ScrollView>
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

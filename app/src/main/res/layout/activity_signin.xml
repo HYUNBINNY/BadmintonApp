@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_greenblur">
+    android:background="@drawable/background_greenblur"
+    android:fitsSystemWindows="true"
+    >
+
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backgroundfilter" />
 
-    <!--상단 바-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
 
-        <!--뒤로가기 버튼-->
+        >
+
         <ImageView
             android:id="@+id/btn_back"
             android:layout_width="28dp"
@@ -29,7 +32,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <!--상단 문구-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,37 +46,23 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/login_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+    <View
+        android:id="@+id/separator_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#FFFFFF"
         android:layout_marginTop="50dp"
+        app:layout_constraintWidth_percent="0.9"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <!--상단 선-->
-        <View
-            android:layout_width="350dp"
-            android:layout_height="2dp"
-            android:background="#FFFFFF"
-            android:layout_marginHorizontal="15dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="10dp"/>
-
-
-    </LinearLayout>
-
-    <!--스크롤-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintBottom_toBottomOf="parent">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +71,6 @@
             android:paddingHorizontal="30dp"
             android:paddingBottom="50dp">
 
-            <!--이름 입력-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -100,7 +87,6 @@
                 android:textSize="14sp"
                 android:inputType="textPersonName"/>
 
-            <!--생년월일 입력-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,7 +103,6 @@
                 android:textSize="14sp"
                 android:inputType="number"/>
 
-            <!--성별 선택-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,17 +117,18 @@
 
                 <RadioButton
                     android:id="@+id/rb_male"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="남성"
                     android:textColor="#000000"
                     android:buttonTint="#000000"
                     android:textStyle="bold"
-                    android:layout_marginEnd="20dp"
                     android:checked="true"/>
                 <RadioButton
                     android:id="@+id/rb_female"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="여성"
                     android:textStyle="bold"
@@ -150,7 +136,6 @@
                     android:buttonTint="#000000"/>
             </RadioGroup>
 
-            <!--전화번호 입력-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -163,18 +148,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_weight="1"
                     android:background="@drawable/loginbackground"
                     android:paddingHorizontal="15dp"
                     android:hint="숫자만 입력"
                     android:textSize="14sp"
                     android:inputType="phone"/>
-                
             </LinearLayout>
 
-            <!--아이디 입력-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -206,7 +188,6 @@
                     android:textStyle="bold"/>
             </LinearLayout>
 
-            <!--비밀번호 입력-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -223,7 +204,6 @@
                 android:textSize="14sp"
                 android:inputType="textPassword"/>
 
-            <!--비밀번호 재확인-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -241,7 +221,6 @@
                 android:inputType="textPassword"/>
 
 
-            <!--주소 입력-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -276,7 +255,6 @@
 
             </LinearLayout>
 
-            <!--상세 주소 입력-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -292,7 +270,6 @@
 
 
 
-            <!--회원가입 완료 버튼-->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btn_signup_proceed"
                 android:layout_width="match_parent"
