@@ -1,16 +1,26 @@
+# Android Studio / IntelliJ
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+*.ipr
+*.iws
+/out/
+
+# Android build outputs
+/build/
+*/build/
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Gradle
+.gradle/
+**/.gradle/
+
+# Local config (DO NOT COMMIT)
 local.properties
 google-services.json
+
+# OS / Misc
+.DS_Store
+Thumbs.db
+*.log
