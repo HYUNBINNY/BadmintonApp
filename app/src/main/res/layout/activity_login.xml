@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_greenblur">
+    android:background="@drawable/background_greenblur"
+    android:fitsSystemWindows="true"
+    >
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgroundfilter" />
+         />
 
     <!-- 🔙 왼쪽 상단 뒤로가기 버튼 -->
     <ImageView
         android:id="@+id/btn_back"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:padding="6dp"

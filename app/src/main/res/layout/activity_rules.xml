@@ -8,136 +8,338 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginVertical="20dp"
-        app:cardBackgroundColor="#F5F5F5"
+        android:layout_marginVertical="30dp"
+        app:cardBackgroundColor="#F8F9FA"
         app:cardCornerRadius="20dp"
-        app:cardElevation="0dp"
+        app:cardElevation="10dp"
         app:strokeWidth="0dp"
-        app:layout_constraintWidth_percent="0.8"
+
+        app:layout_constraintWidth_percent="0.85"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:scrollbars="none">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header_rules"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:layout_height="60dp"
+                android:paddingHorizontal="20dp"
+                android:background="#FFFFFF"
+                android:elevation="2dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/btn_back_rules"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/backicon"
+                    app:tint="#000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:text="배드민턴 경기 규칙"
+                    android:text="배드민턴 규정"
                     android:textColor="#000000"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.cardview.widget.CardView
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scrollbars="none"
+                android:clipToPadding="false"
+                android:paddingBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/header_rules"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="5dp">
-                    <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Badminton Guide"
+                        android:textColor="#8ED73D"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="핵심 규칙 5단계"
+                        android:textColor="#222222"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardBackgroundColor="#FFFFFF">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:text="1. 2점수 방식"
-                            android:textColor="#8ED73D"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:lineSpacingExtra="4dp"
-                            android:text="- 3게임 중 2게임을 먼저 이기면 승리합니다.\n- 한 게임당 21점 또는 25점을 먼저 득점하면 승리합니다.\n- 20:20 동점(듀스)일 경우, 2점을 연속으로 먼저 득점한 쪽이 승리합니다. (최대 30점까지)"
-                            android:textColor="#555555"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            android:orientation="vertical"
+                            android:padding="15dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="STEP 01"
+                                    android:textColor="#8ED73D"
+                                    android:textStyle="bold"
+                                    android:textSize="11sp"
+                                    android:background="@drawable/shoppingsearchbox"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="3dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="경기 준비"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:layout_marginStart="8dp"/>
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="• 토스(Toss): 가위바위보로 서비스 권한 결정\n• 웜업: 경기 전 2분간 난타 가능"
+                                android:textSize="13sp"
+                                android:textColor="#555555"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="5dp">
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardBackgroundColor="#FFFFFF">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:text="2. 서비스 규칙"
-                            android:textColor="#8ED73D"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:lineSpacingExtra="4dp"
-                            android:text="- 서버의 점수가 짝수이면 오른쪽, 홀수이면 왼쪽에서 대각선 방향으로 서비스합니다.\n- 셔틀콕은 허리 아래에서 쳐야 합니다.\n- 라켓 헤드가 손목보다 낮아야 합니다."
-                            android:textColor="#555555"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            android:orientation="vertical"
+                            android:padding="15dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="STEP 02"
+                                    android:textColor="#8ED73D"
+                                    android:textStyle="bold"
+                                    android:textSize="11sp"
+                                    android:background="@drawable/shoppingsearchbox"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="3dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="서비스 규칙"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:layout_marginStart="8dp"/>
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="• 대각선: 반드시 대각선 방향으로 서비스\n• 위치: 짝수 점수 우측 / 홀수 점수 좌측\n• 높이: 배꼽 아래 높이에서 타구"
+                                android:textSize="13sp"
+                                android:textColor="#555555"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    app:cardBackgroundColor="#FFFFFF"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="5dp">
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardBackgroundColor="#FFFFFF">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:text="3. 반칙 규정(Fault)"
-                            android:textColor="#FF6B6B"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="STEP 03"
+                                    android:textColor="#8ED73D"
+                                    android:textStyle="bold"
+                                    android:textSize="11sp"
+                                    android:background="@drawable/shoppingsearchbox"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="3dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="게임 진행"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:layout_marginStart="8dp"/>
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="• 랠리 포인트: 서브권 무관 1점 득점\n• 코트 변경: 세트 종료 시 (3세트는 11점)"
+                                android:textSize="13sp"
+                                android:textColor="#555555"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardBackgroundColor="#FFFFFF">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:lineSpacingExtra="4dp"
-                            android:text="- 셔틀콕이 네트에 걸리거나 코트 밖으로 나간 경우\n- 라켓이나 몸이 네트를 건드린 경우 (네트 터치)\n- 셔틀콕을 두 번 연속으로 친 경우 (더블 터치)"
-                            android:textColor="#555555"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            android:orientation="vertical"
+                            android:padding="15dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="STEP 04"
+                                    android:textColor="#8ED73D"
+                                    android:textStyle="bold"
+                                    android:textSize="11sp"
+                                    android:background="@drawable/shoppingsearchbox"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="3dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="승패 결정"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000000"
+                                    android:layout_marginStart="8dp"/>
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="• 승리: 21점 선취 (3판 2선승제)\n• 듀스: 20:20 시 2점 차 승리 (최대 30점)"
+                                android:textSize="13sp"
+                                android:textColor="#555555"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#FFEBEE"
+                        app:cardBackgroundColor="#FFF5F5">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="15dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="WARNING"
+                                    android:textColor="#FF6B6B"
+                                    android:textStyle="bold"
+                                    android:textSize="11sp"
+                                    android:background="@drawable/shoppingsearchbox"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="3dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="반칙 (Fault)"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#D32F2F"
+                                    android:layout_marginStart="8dp"/>
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="• 라인 아웃 / 네트 터치 / 오버 네트\n• 더블 터치 (두 번 치기)"
+                                android:textSize="13sp"
+                                android:textColor="#555555"
+                                android:lineSpacingExtra="4dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
-        </ScrollView>
+                    <View android:layout_width="match_parent" android:layout_height="30dp"/>
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

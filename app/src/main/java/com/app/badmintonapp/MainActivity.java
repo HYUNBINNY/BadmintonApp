@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.graphics.Color; // ★ 추가됨
+import android.graphics.Typeface; // ★ 추가됨
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView; // ★ 추가됨
 import android.widget.LinearLayout;
+import android.widget.TextView; // ★ 추가됨
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,49 +26,53 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 1. 뷰 연결
         btnHome = findViewById(R.id.btn_nav_home);
         btnRules = findViewById(R.id.btn_nav_rules);
         btnGame = findViewById(R.id.btn_nav_game);
         btnPlace = findViewById(R.id.btn_nav_place);
         btnShop = findViewById(R.id.btn_nav_shop);
 
-        // ✅ 앱 시작 시 홈
+        // 2. 앱 시작 시 홈 화면 로드
         if (savedInstanceState == null) {
             loadFragment(new ActivityHome(), false);
         }
 
-        // ✅ 뒤로가기(제스처/버튼) 처리: OnBackPressedDispatcher
+        // 3. 뒤로가기 처리
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-
-                // 1) 백스택이 남아있으면: 이전 Fragment로
                 if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
                     getSupportFragmentManager().popBackStack();
                     return;
                 }
-
-                // 2) 백스택이 없으면(=홈): 두 번 눌러 종료
                 long now = System.currentTimeMillis();
                 if (now - lastBackPressedTime < BACK_PRESS_INTERVAL) {
                     finish();
                 } else {
                     lastBackPressedTime = now;
-                    Toast.makeText(MainActivity.this,
-                            "종료하시겠습니까? (한 번 더 누르면 종료)",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "종료하시겠습니까? (한 번 더 누르면 종료)", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        // 4. 버튼 클릭 리스너 설정 (클릭 시 색상 변경 + 화면 이동)
+
         // 홈
-        btnHome.setOnClickListener(v -> loadFragment(new ActivityHome(), false));
+        btnHome.setOnClickListener(v -> {
+            updateBottomMenu(btnHome); // ★ 버튼 색상 변경
+            loadFragment(new ActivityHome(), false);
+        });
 
-        // 규칙 (Fragment)
-        btnRules.setOnClickListener(v -> loadFragment(new ActivityRules(), true));
+        // 규칙
+        btnRules.setOnClickListener(v -> {
+            updateBottomMenu(btnRules); // ★ 버튼 색상 변경
+            loadFragment(new ActivityRules(), true);
+        });
 
-        // 미니게임 (Fragment)
+        // 미니게임
         btnGame.setOnClickListener(v -> {
+            updateBottomMenu(btnGame); // ★ 버튼 색상 변경
             try {
                 loadFragment(new ActivityMinigame(), true);
             } catch (Exception e) {
@@ -72,27 +80,57 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 체육관: 토스트
-        btnPlace.setOnClickListener(v ->
-                Toast.makeText(this, "준비 중입니다", Toast.LENGTH_SHORT).show()
-        );
+        // 체육관
+        btnPlace.setOnClickListener(v -> {
+            updateBottomMenu(btnPlace); // ★ 버튼 색상 변경
+            Toast.makeText(this, "준비 중입니다", Toast.LENGTH_SHORT).show();
+        });
 
-        // 쇼핑 (Fragment)
+        // 쇼핑
         btnShop.setOnClickListener(v -> {
+            updateBottomMenu(btnShop); // ★ 버튼 색상 변경
             try {
                 loadFragment(new ActivityShopping(), true);
             } catch (Exception e) {
                 Toast.makeText(this, "쇼핑 화면 준비중!", Toast.LENGTH_SHORT).show();
             }
         });
+
+        // ★ 앱 시작 시 홈 버튼 색상 적용 (onCreate 마지막에 위치해야 함)
+        updateBottomMenu(btnHome);
+    }
+
+    /**
+     * 하단 메뉴 색상 변경 함수
+     * 선택된 메뉴는 검은색/굵게, 나머지는 회색/보통으로 변경
+     */
+    private void updateBottomMenu(LinearLayout selectedLayout) {
+        // 모든 메뉴 버튼을 배열에 담기
+        LinearLayout[] menus = {btnHome, btnRules, btnGame, btnPlace, btnShop};
+
+        for (LinearLayout layout : menus) {
+            // XML 구조상 첫 번째는 이미지(0), 두 번째는 텍스트(1)
+            ImageView icon = (ImageView) layout.getChildAt(0);
+            TextView text = (TextView) layout.getChildAt(1);
+
+            if (layout == selectedLayout) {
+                // 선택된 버튼: 검은색(#000000) & 글씨 굵게
+                icon.setColorFilter(Color.parseColor("#000000"));
+                text.setTextColor(Color.parseColor("#000000"));
+                text.setTypeface(null, Typeface.BOLD);
+            } else {
+                // 나머지 버튼: 회색(#888888) & 글씨 보통
+                icon.setColorFilter(Color.parseColor("#888888"));
+                text.setTextColor(Color.parseColor("#888888"));
+                text.setTypeface(null, Typeface.NORMAL);
+            }
+        }
     }
 
     /**
      * Fragment 교체
-     * @param fragment 교체할 Fragment
-     * @param addToBackStack true면 뒤로가기 시 이전 화면으로 돌아감
      */
-    private void loadFragment(Fragment fragment, boolean addToBackStack) {
+    protected void loadFragment(Fragment fragment, boolean addToBackStack) {
         if (addToBackStack) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -100,12 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
         } else {
-            // ✅ 홈으로 돌아올 때 백스택 정리 (뒤로가기 누르면 종료 흐름 유지)
-            getSupportFragmentManager().popBackStack(
-                    null,
-                    getSupportFragmentManager().POP_BACK_STACK_INCLUSIVE
-            );
-
+            getSupportFragmentManager().popBackStack(null, getSupportFragmentManager().POP_BACK_STACK_INCLUSIVE);
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, fragment)
